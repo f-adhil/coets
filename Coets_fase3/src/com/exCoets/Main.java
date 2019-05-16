@@ -27,10 +27,45 @@ public class Main {
 
         //print rockets
         printRocketEasy(rocket1);
-  //      printRocketEasy(rocket2);
+
 
         rocket1.accRocket();
         printRocketEasy(rocket1);
+
+        rocket1.accRocket();
+        printRocketEasy(rocket1);
+
+        rocket1.accRocket();
+        printRocketEasy(rocket1);
+
+        rocket1.brakeRocket();
+        printRocketEasy(rocket1);
+
+        rocket1.brakeRocket();
+        printRocketEasy(rocket1);
+
+        printRocketEasy(rocket2);
+
+        rocket2.accRocket();
+        printRocketEasy(rocket2);
+
+        rocket2.accRocket();
+        printRocketEasy(rocket2);
+
+        rocket2.accRocket();
+        printRocketEasy(rocket2);
+
+        rocket2.accRocket();
+        printRocketEasy(rocket2);
+
+        rocket2.brakeRocket();
+        printRocketEasy(rocket2);
+
+        rocket2.brakeRocket();
+        printRocketEasy(rocket2);
+
+
+
 
 
     }

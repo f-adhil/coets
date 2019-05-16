@@ -45,16 +45,26 @@ public class Rocket {
         this.propellers = propellers;
     }
 
-    public void  accRocket() throws Exception {
+    public void  accRocket(){
 
             for (int i =0; i < propellers.size(); i++){
+            if(propellers.get(i).getCurrentPower() < propellers.get(i).getMaxPower()){
                 propellers.get(i).setCurrentPower(propellers.get(i).getCurrentPower() + 10);
+            } else {
+                propellers.get(i).setCurrentPower(propellers.get(i).getMaxPower());
             }
+        }
     }
 
-    public void brakeRocket() throws Exception {
-        for (int i =0; i < propellers.size(); i++){
-            propellers.get(i).setCurrentPower(propellers.get(i).getCurrentPower() - 10);
+    public void brakeRocket(){
+
+        for (int i =0; i < propellers.size(); i++) {
+            if (propellers.get(i).getCurrentPower() > 0) {
+                propellers.get(i).setCurrentPower(propellers.get(i).getCurrentPower() - 10);
+            } else {
+                propellers.get(i).setCurrentPower(0);
+
+            }
         }
     }
 

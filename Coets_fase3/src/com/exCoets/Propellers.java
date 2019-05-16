@@ -19,7 +19,7 @@ public class Propellers {
             System.out.println("NEGATIVE POWER!! ");
         }
         if ( (currentPower >= maxPower)){
-            System.out.println("ALARM MAXIMUM POWER REACHED OR EXCEEDED!! " + currentPower + "/" + maxPower);
+            System.out.println("(maximum power reached: " + currentPower + "/" + maxPower + ")");
         }
     }
 
@@ -33,7 +33,7 @@ public class Propellers {
 
     public void setCurrentPower(int currentPower) {
         this.currentPower = currentPower;
-        checkPower(currentPower, maxPower);
+  //     checkPower(currentPower, maxPower);
     }
 
     @Override
