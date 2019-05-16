@@ -1,5 +1,6 @@
 package com.exCoets;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Rocket {
@@ -43,9 +44,11 @@ public class Rocket {
         this.propellers = propellers;
     }
 
-/*    @Override
-    public String toString() {
-        return "rocketId='" + rocketId + '\'' +
-                ", propellers=" + propellers;
-    }*/
+//method to obtain a list that contains all the power values for a rocket.
+    public List<Integer> listPropPower(){
+        List<Integer> propPowers = new ArrayList<>();
+        for (int i=0; i < propellers.size(); i++)
+            propPowers.add(propellers.get(i).getPower());
+        return propPowers;
+    }
 }

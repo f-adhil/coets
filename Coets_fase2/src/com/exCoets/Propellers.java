@@ -25,5 +25,8 @@ public class Propellers {
         }
     }
 
-
+    @Override
+    public String toString() {
+        return "power: " + power;
+    }
 }
