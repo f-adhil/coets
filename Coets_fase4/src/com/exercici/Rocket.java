@@ -24,7 +24,6 @@ public class Rocket {
     }
 
 
-
     public void checkRocketId(String rocketId) throws Exception {
         if(this.rocketId.length()!= 8){
             throw new Exception("l'Id del coet ha d'ésser de 8 caràcters");
@@ -70,6 +69,7 @@ public class Rocket {
                 propellers.get(i).setCurrentPower(propellers.get(i).getMaxPower());
             }
         }
+            calculateSpeed();
     }
 
     public void brakeRocket(){
@@ -79,29 +79,26 @@ public class Rocket {
                 propellers.get(i).setCurrentPower(propellers.get(i).getCurrentPower() - 10);
             } else {
                 propellers.get(i).setCurrentPower(0);
-
             }
         }
+        calculateSpeed();
     }
 
-    public double calculateSpeed(){
+
+    public void  calculateSpeed(){
         int acumulatedPower = 0;
         for (int i = 0; i < propellers.size(); i++){
             acumulatedPower = acumulatedPower + propellers.get(i).getCurrentPower();
-
         }
-   //     System.out.println("rocket " + this.rocketId + " acumulated power: " + acumulatedPower);
         speed = (float) (speed + 100 * Math.sqrt(acumulatedPower));
-        System.out.println("new speed: " + speed);
         setSpeed(speed);
-        return speed;
     }
 
     @Override
     public String toString() {
         return rocketId  +  ": " +
                 propellers.toString().replace("[", "").replace("]", "") +
-                " initial speed: " + getSpeed();
+                " speed: " + getSpeed();
     }
 
 }
